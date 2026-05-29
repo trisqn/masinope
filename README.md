@@ -79,17 +79,17 @@ py -3.11 predict.py C:\path\to\images --csv predictions.csv
 
 Latest improved run:
 
-- Validation MAE: `6.9967` years
-- Test MAE: `6.9114` years
-- Test RMSE: `9.4941` years
+- Validation MAE: `6.5380` years
+- Test MAE: `6.6056` years
+- Test RMSE: `9.2369` years
 
 Per-bin test MAE:
 
-- `0-9`: `3.7908`
-- `10-19`: `7.8246`
-- `20-29`: `6.7297`
-- `30-39`: `7.2189`
-- `40-49`: `11.6303`
-- `50-59`: `14.6910`
+- `0-9`: `3.3719`
+- `10-19`: `7.3150`
+- `20-29`: `6.4579`
+- `30-39`: `7.2798`
+- `40-49`: `12.3165`
+- `50-59`: `14.3414`
 
 The model is still weakest in the `40-59` range because those bins have far fewer examples than younger ages.

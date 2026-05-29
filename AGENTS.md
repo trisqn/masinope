@@ -45,6 +45,22 @@ py -3.11 main.py --test-fraction 0.1
 py -3.11 main.py --no-use-sample-weights
 ```
 
+Next experiment to continue:
+
+```powershell
+py -3.11 main.py --device gpu --epochs 18 --fine-tune-epochs 22 --patience 8 --fine-tune-layers 80 --sample-weight-cap 8 --sample-weight-power 1.15
+```
+
+Current best overall run:
+
+```powershell
+py -3.11 main.py --device gpu --epochs 18 --fine-tune-epochs 22 --patience 8 --fine-tune-layers 90 --sample-weight-cap 8 --sample-weight-power 1.15
+```
+
+- Validation MAE: `5.9115`
+- Test MAE: `5.9416`
+- Note: this is the best overall MAE so far. A comparison run with `fine_tune_layers=70`, `cap=8`, and `power=1.15` scored validation MAE `5.9689` and test MAE `6.0589`; it slightly improved `40-49` test MAE versus `90` layers but worsened overall MAE and did not improve `50-59`. The next experiment tests the midpoint, `fine_tune_layers=80`, with the same longer fine-tuning schedule and sample weighting.
+
 Use `--weights none` when ImageNet weights cannot be downloaded.
 
 ## Evaluation Notes
