@@ -21,8 +21,8 @@
     "40-49": 3.708403471405353,
     "50-59": 6.354840255971005
   },
-  "fine_tune_layers": 70,
-  "fine_tune_learning_rate": 1e-05,
+  "fine_tune_layers": 90,
+  "fine_tune_learning_rate": 7.5e-06,
   "target_age_range": {
     "min_inclusive": 0.0,
     "max_exclusive": 60.0
@@ -53,14 +53,14 @@
     "50-59": 130
   },
   "validation_metrics": {
-    "loss": 5.717927932739258,
-    "mae_years": 5.968862533569336,
-    "rmse_years": 8.44739055633545
+    "loss": 5.629288196563721,
+    "mae_years": 5.8379082679748535,
+    "rmse_years": 8.348267555236816
   },
   "test_metrics": {
-    "loss": 5.806294918060303,
-    "mae_years": 6.058902263641357,
-    "rmse_years": 8.6322603225708
+    "loss": 5.662228584289551,
+    "mae_years": 5.871960163116455,
+    "rmse_years": 8.475224494934082
   },
   "best_model": "/mnt/c/Users/trist/Documents/projekt/model_out/best_age_model.keras"
 }

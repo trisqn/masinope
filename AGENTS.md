@@ -48,18 +48,18 @@ py -3.11 main.py --no-use-sample-weights
 Next experiment to continue:
 
 ```powershell
-py -3.11 main.py --device gpu --epochs 18 --fine-tune-epochs 22 --patience 8 --fine-tune-layers 80 --sample-weight-cap 8 --sample-weight-power 1.15
+py -3.11 main.py --device gpu --epochs 18 --fine-tune-epochs 24 --patience 8 --fine-tune-layers 90 --fine-tune-learning-rate 7.5e-6 --sample-weight-cap 6 --sample-weight-power 1.1
 ```
 
 Current best overall run:
 
 ```powershell
-py -3.11 main.py --device gpu --epochs 18 --fine-tune-epochs 22 --patience 8 --fine-tune-layers 90 --sample-weight-cap 8 --sample-weight-power 1.15
+py -3.11 main.py --device gpu --epochs 18 --fine-tune-epochs 24 --patience 8 --fine-tune-layers 90 --fine-tune-learning-rate 7.5e-6 --sample-weight-cap 8 --sample-weight-power 1.15
 ```
 
-- Validation MAE: `5.9115`
-- Test MAE: `5.9416`
-- Note: this is the best overall MAE so far. A comparison run with `fine_tune_layers=70`, `cap=8`, and `power=1.15` scored validation MAE `5.9689` and test MAE `6.0589`; it slightly improved `40-49` test MAE versus `90` layers but worsened overall MAE and did not improve `50-59`. The next experiment tests the midpoint, `fine_tune_layers=80`, with the same longer fine-tuning schedule and sample weighting.
+- Validation MAE: `5.8379`
+- Test MAE: `5.8720`
+- Note: this is the best overall MAE so far. The layer sweep favored `90` fine-tune layers, and `7.5e-6` fine-tune learning rate beat both `1e-5` and `5e-6` overall. Older bins remain weak (`40-49` test MAE `12.8242`, `50-59` test MAE `15.3517`), while `0-29` improved. Stronger weighting did not consistently improve older-bin test MAE, so the next experiment keeps the current best schedule and slightly reduces sample weighting to `cap=6`, `power=1.1`.
 
 Use `--weights none` when ImageNet weights cannot be downloaded.
 
